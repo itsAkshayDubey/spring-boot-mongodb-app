@@ -24,5 +24,18 @@ public class UserService {
 	public User getUser(int id) {
 		return repo.findItemById(id);
 	}
+
+	public User updateUser(User user, int id) {
+		User persistUser = this.getUser(id);
+		if(persistUser != null) {
+			persistUser.setId(id);
+			persistUser.setName(user.getName());
+			persistUser.setEnabled(user.isEnabled());
+			return repo.save(persistUser);
+		}
+		
+		return null;
+		
+	}
 	
 }
