@@ -3,29 +3,26 @@ package com.github.itsAkshayDubey.springbootnosql.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.github.itsAkshayDubey.springbootnosql.entity.User;
+import com.github.itsAkshayDubey.springbootnosql.repository.UserRepository;
 
 @Service
 public class UserService {
+	
+	@Autowired
+	private UserRepository repo;
 
 	List<User> list = new ArrayList<>();
 	
 	public User addUser(User user) {
-		user.setId(list.size());
-		list.add(user);
-		
-		return user;
+		return repo.save(user);
 	}
 	
 	public User getUser(int id) {
-		for(User user:list) {
-			if(user.getId()==id)
-				return user;
-		}
-		
-		return null;
+		return repo.findItemById(id);
 	}
 	
 }
