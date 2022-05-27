@@ -19,4 +19,13 @@ public class UserService {
 		return user;
 	}
 	
+	public User getUser(int id) {
+		for(User user:list) {
+			if(user.getId()==id)
+				return user;
+		}
+		
+		return null;
+	}
+	
 }
