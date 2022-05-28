@@ -26,7 +26,7 @@ public class UserService {
 		User user = repo.findItemById(id);
 		if(user != null)
 			return user;
-		throw new UserNotFoundException();
+		throw new UserNotFoundException("User with id "+id+" not found.");
 	}
 
 	public User updateUser(User user, int id) {
@@ -37,14 +37,14 @@ public class UserService {
 			persistUser.setEnabled(user.isEnabled());
 			return repo.save(persistUser);
 		}
-		throw new UserNotFoundException();
+		throw new UserNotFoundException("User with id "+id+" not found.");
 		
 	}
 	
 	public void deleteUser(int id) {
 		if(this.getUser(id) != null)
 			repo.deleteById(id);
-		throw new UserNotFoundException();
+		throw new UserNotFoundException("User with id "+id+" not found.");
 	}
 	
 	public long getUserCount() {
