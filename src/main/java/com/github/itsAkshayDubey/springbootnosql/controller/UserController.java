@@ -1,6 +1,8 @@
 package com.github.itsAkshayDubey.springbootnosql.controller;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -45,7 +47,7 @@ public class UserController {
 	}
 	
 	@GetMapping("/users/count")
-	public long getCount() {
+	public long getUserCount() {
 		return service.getUserCount();
 	}
 	
