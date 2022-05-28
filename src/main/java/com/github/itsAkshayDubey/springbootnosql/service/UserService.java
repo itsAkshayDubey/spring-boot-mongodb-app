@@ -43,4 +43,8 @@ public class UserService {
 		repo.deleteById(id);
 	}
 	
+	public long getUserCount() {
+		return repo.count();
+	}
+	
 }

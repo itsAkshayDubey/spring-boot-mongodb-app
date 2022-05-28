@@ -13,5 +13,7 @@ public interface UserRepository extends MongoRepository<User, Integer>{
     User findItemById(int id);
     
     void deleteById(int id);
+    
+    long count();
 
 }

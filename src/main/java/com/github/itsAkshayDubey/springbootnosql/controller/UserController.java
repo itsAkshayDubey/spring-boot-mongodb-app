@@ -44,5 +44,9 @@ public class UserController {
 		service.deleteUser(id);
 	}
 	
+	@GetMapping("/users/count")
+	public long getCount() {
+		return service.getUserCount();
+	}
 	
 }
