@@ -51,4 +51,9 @@ public class UserController {
 		return service.getUserCount();
 	}
 	
+	@GetMapping("/users")
+	public List<User> getAllUsers(){
+		return service.getAllUsers();
+	}
+	
 }

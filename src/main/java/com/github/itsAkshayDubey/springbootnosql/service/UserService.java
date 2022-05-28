@@ -47,4 +47,8 @@ public class UserService {
 		return repo.count();
 	}
 	
+	public List<User> getAllUsers(){
+		return repo.findAll();
+	}
+	
 }
