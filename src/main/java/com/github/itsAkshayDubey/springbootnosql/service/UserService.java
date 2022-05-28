@@ -23,7 +23,10 @@ public class UserService {
 	}
 	
 	public User getUser(int id) {
-		return repo.findItemById(id);
+		User user = repo.findItemById(id);
+		if(user != null)
+			return user;
+		throw new UserNotFoundException();
 	}
 
 	public User updateUser(User user, int id) {
@@ -34,16 +37,14 @@ public class UserService {
 			persistUser.setEnabled(user.isEnabled());
 			return repo.save(persistUser);
 		}
-		else
-			throw new UserNotFoundException();
+		throw new UserNotFoundException();
 		
 	}
 	
 	public void deleteUser(int id) {
 		if(this.getUser(id) != null)
 			repo.deleteById(id);
-		else
-			throw new UserNotFoundException();
+		throw new UserNotFoundException();
 	}
 	
 	public long getUserCount() {
