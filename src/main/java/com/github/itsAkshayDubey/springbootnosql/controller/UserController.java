@@ -32,6 +32,7 @@ public class UserController {
 	}
 	
 	@PutMapping("/user/{id}")
+	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	public User updateUser(@RequestBody User user, @PathVariable int id) {
 		return service.updateUser(user,id);
 	}
