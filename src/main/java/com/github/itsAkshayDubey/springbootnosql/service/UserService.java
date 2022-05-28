@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.github.itsAkshayDubey.springbootnosql.entity.User;
+import com.github.itsAkshayDubey.springbootnosql.exception.UserNotFoundException;
 import com.github.itsAkshayDubey.springbootnosql.repository.UserRepository;
 
 @Service
@@ -33,14 +34,16 @@ public class UserService {
 			persistUser.setEnabled(user.isEnabled());
 			return repo.save(persistUser);
 		}
-		
-		return null;
+		else
+			throw new UserNotFoundException();
 		
 	}
 	
 	public void deleteUser(int id) {
-		
-		repo.deleteById(id);
+		if(this.getUser(id) != null)
+			repo.deleteById(id);
+		else
+			throw new UserNotFoundException();
 	}
 	
 	public long getUserCount() {
