@@ -47,11 +47,13 @@ public class UserController {
 	}
 	
 	@GetMapping("/users/count")
+	@ResponseStatus(code = HttpStatus.OK)
 	public long getUserCount() {
 		return service.getUserCount();
 	}
 	
 	@GetMapping("/users")
+	@ResponseStatus(code = HttpStatus.OK)
 	public List<User> getAllUsers(){
 		return service.getAllUsers();
 	}
