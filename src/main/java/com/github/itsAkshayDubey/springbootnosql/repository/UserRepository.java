@@ -11,5 +11,7 @@ public interface UserRepository extends MongoRepository<User, Integer>{
 	
     @Query("{ 'id': ?0 }")
     User findItemById(int id);
+    
+    void deleteById(int id);
 
 }

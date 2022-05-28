@@ -38,4 +38,9 @@ public class UserService {
 		
 	}
 	
+	public void deleteUser(int id) {
+		
+		repo.deleteById(id);
+	}
+	
 }
