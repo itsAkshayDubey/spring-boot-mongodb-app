@@ -23,7 +23,7 @@ public class UserService {
 	}
 	
 	public User getUser(int id) {
-		User user = repo.findItemById(id);
+		User user = repo.findUserById(id);
 		if(user != null)
 			return user;
 		throw new UserNotFoundException("User with id "+id+" not found.",new Throwable("User not found"));

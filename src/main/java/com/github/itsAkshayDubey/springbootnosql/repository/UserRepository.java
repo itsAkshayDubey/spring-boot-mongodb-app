@@ -12,7 +12,7 @@ import com.github.itsAkshayDubey.springbootnosql.entity.User;
 public interface UserRepository extends MongoRepository<User, Integer>{
 	
     @Query("{ 'id': ?0 }")
-    User findItemById(int id);
+    User findUserById(int id);
     
     void deleteById(int id);
     
