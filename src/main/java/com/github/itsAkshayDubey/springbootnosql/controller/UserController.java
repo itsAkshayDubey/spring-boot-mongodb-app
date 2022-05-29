@@ -64,4 +64,10 @@ public class UserController {
 		return service.getAllActiveUsers();
 	}	
 	
+	@GetMapping("/users/inactive")
+	@ResponseStatus(code = HttpStatus.OK)
+	public List<User> getAllInactiveUsers(){
+		return service.getAllInactiveUsers();
+	}	
+	
 }

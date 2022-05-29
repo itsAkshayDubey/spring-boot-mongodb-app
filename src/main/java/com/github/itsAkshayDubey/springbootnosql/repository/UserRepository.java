@@ -19,5 +19,7 @@ public interface UserRepository extends MongoRepository<User, Integer>{
     long count();
     
     List<User> findByIsEnabledIsTrue();
+    
+    List<User> findByIsEnabledIsFalse();
 
 }
