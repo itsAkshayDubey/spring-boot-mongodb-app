@@ -55,4 +55,8 @@ public class UserService {
 		return repo.findAll();
 	}
 	
+	public List<User> getAllActiveUsers(){
+		return repo.findByIsEnabledIsTrue();
+	}
+	
 }

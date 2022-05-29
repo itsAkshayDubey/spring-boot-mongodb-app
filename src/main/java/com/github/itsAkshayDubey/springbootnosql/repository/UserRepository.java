@@ -1,5 +1,7 @@
 package com.github.itsAkshayDubey.springbootnosql.repository;
 
+import java.util.List;
+
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -15,5 +17,7 @@ public interface UserRepository extends MongoRepository<User, Integer>{
     void deleteById(int id);
     
     long count();
+    
+    List<User> findByIsEnabledIsTrue();
 
 }

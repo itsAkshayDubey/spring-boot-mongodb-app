@@ -58,4 +58,10 @@ public class UserController {
 		return service.getAllUsers();
 	}
 	
+	@GetMapping("/users/active")
+	@ResponseStatus(code = HttpStatus.OK)
+	public List<User> getAllActiveUsers(){
+		return service.getAllActiveUsers();
+	}	
+	
 }
