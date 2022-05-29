@@ -12,7 +12,7 @@ import com.github.itsAkshayDubey.springbootnosql.exception.ErrorDetails;
 import com.github.itsAkshayDubey.springbootnosql.exception.UserNotFoundException;
 
 @ControllerAdvice
-public class UserNotFoundExceptionController {
+public class GlobalExceptionController {
 
 	@ExceptionHandler(value = UserNotFoundException.class)
 	public ResponseEntity<Object> exception(UserNotFoundException exception, WebRequest request) {
